@@ -322,7 +322,7 @@ module Twilio
   class Dial
     extend Twilio::Verb::ClassMethods
     include Twilio::Verb
-    attributes :action, :method, :timeout, :hangupOnStar, :timeLimit, :callerId
+    attributes :action, :method, :timeout, :hangupOnStar, :timeLimit, :callerId, :record
     allowed_verbs :number, :conference
   end
 
