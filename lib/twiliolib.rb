@@ -288,6 +288,10 @@ module Twilio
       append Twilio::Sms.new(msg, opts)
     end
 
+    def addReject(reason)
+      append Twilio::Reject.new(reason)
+    end
+
   end
 
   class Say
@@ -355,6 +359,12 @@ module Twilio
     extend Twilio::Verb::ClassMethods
     include Twilio::Verb
     attributes :to, :from, :statusCallback, :action, :method
+  end
+
+  class Reject
+    extend Twilio::Verb::ClassMethods
+    include Twilio::Verb
+    attributes :reason
   end
 
   class Response
