@@ -370,7 +370,7 @@ module Twilio
   class Response
     extend Twilio::Verb::ClassMethods
     include Twilio::Verb
-    allowed_verbs :say, :play, :gather, :record, :dial, :redirect, :pause, :hangup, :sms
+    allowed_verbs :say, :play, :gather, :record, :dial, :redirect, :pause, :hangup, :sms, :reject
   end
   
   # Twilio Utility function and Request Validation class
