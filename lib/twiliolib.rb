@@ -253,8 +253,17 @@ module Twilio
       append Twilio::Play.new(file_to_play, opts)
     end
 
-    def addGather(opts = {})
-      append Twilio::Gather.new(opts)
+    def addGather(opts = {}, &block)
+      gather = Twilio::Gather.new(opts)
+      if block_given?
+        if block.arity > 0
+          block.call(gather)
+        else
+          gather.instance_eval(&block)
+        end
+      end
+
+      append gather
     end
 
     def addRecord(opts = {})
