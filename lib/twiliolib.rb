@@ -298,8 +298,8 @@ module Twilio
       append Twilio::Sms.new(msg, opts)
     end
 
-    def addReject(reason)
-      append Twilio::Reject.new(reason)
+    def addReject(opts = {})
+      append Twilio::Reject.new(opts)
     end
 
   end
